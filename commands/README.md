@@ -17,7 +17,7 @@ git init
 ```
 
 # Configurar o .gitignore
-[djangowaves][(https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/)]
+[djangowaves](https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/)
 
 ```
 git add .
