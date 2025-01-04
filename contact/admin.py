@@ -4,7 +4,7 @@ from contact import models
 # Register your models here.
 
 
-@admin.register(models.Contact)
+@admin.register(models.Contact)  # type: ignore
 class ContactAdmin(admin.ModelAdmin):
     # Itens que serão exibidos na tela de administração
     list_display = (
@@ -44,3 +44,9 @@ class ContactAdmin(admin.ModelAdmin):
         'id',
         'phone',
     )
+
+
+@admin.register(models.Category)  # type: ignore
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('id',)
