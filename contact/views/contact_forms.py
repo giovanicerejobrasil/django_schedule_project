@@ -1,36 +1,5 @@
-from django import forms
-from django.shortcuts import render  # , get_object_or_404, redirect
-# from django.db.models import Q
-# from django.core.paginator import Paginator
-from django.core.exceptions import ValidationError
-from contact.models import Contact  # type: ignore
-
-
-class ContactForm(forms.ModelForm):
-    class Meta:
-        model = Contact
-        fields = (
-            'first_name',
-            'last_name',
-            'phone'
-        )
-
-    def clean(self):
-        self.add_error(
-            None,
-            ValidationError(
-                'Message of error',
-                code='invalid'
-            )
-        )
-        self.add_error(
-            None,
-            ValidationError(
-                'Message of error 2',
-                code='invalid'
-            )
-        )
-        return super().clean()
+from django.shortcuts import render
+from contact.forms import ContactForm
 
 
 def create(request):
