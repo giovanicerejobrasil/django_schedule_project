@@ -4,15 +4,23 @@ from .models import Contact  # type: ignore
 
 
 class ContactForm(forms.ModelForm):
-    first_name = forms.CharField(
-        widget=forms.TextInput(
+    # first_name = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class': 'class-class',
+    #             'placeholder': 'John'
+    #         }
+    #     ),
+    #     label='Name',
+    #     help_text='Help text for your user'
+    # )
+
+    picture = forms.ImageField(
+        widget=forms.FileInput(
             attrs={
-                'class': 'class-class',
-                'placeholder': 'John'
+                'accept': 'image/*'
             }
-        ),
-        label='Name',
-        help_text='Help text for your user'
+        )
     )
 
     def __init__(self, *args, **kwargs) -> None:
@@ -29,6 +37,7 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 'phone',
             'email', 'description', 'category',
+            'picture',
         )
 
         # widgets = {
