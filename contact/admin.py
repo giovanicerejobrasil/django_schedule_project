@@ -12,6 +12,7 @@ class ContactAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'phone',
+        'show'
     )
 
     # Ordem dos itens na tela de administração
@@ -37,6 +38,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_editable = (
         'first_name',
         'last_name',
+        'show',
     )
 
     # Link de edição nos itens na tela de administração
