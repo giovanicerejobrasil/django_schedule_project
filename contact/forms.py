@@ -22,8 +22,9 @@ class ContactForm(forms.ModelForm):
         widget=forms.FileInput(
             attrs={
                 'accept': 'image/*'
-            }
-        )
+            },
+        ),
+        required=False,
     )
 
     def __init__(self, *args, **kwargs) -> None:
